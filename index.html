@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soaib Khan | Software Engineer & AI Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .dark-mode {
+            background-color: #0a0a0a !important;
+            color: #d1d1d1 !important;
+        }
+        .dark-mode nav, .dark-mode section, .dark-mode .box, .dark-mode .animated-button {
+            background: #121212 !important;
+            color: #fff !important;
+            border-color: #ff4500 !important;
+        }
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #ff4500;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 10px #ff4500;
+        }
+        .hidden {
+            display: none;
+        }
+        .editable {
+            border: 1px dashed #ff4500;
+            padding: 5px;
+            cursor: text;
+        }
+        .animated-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #ff0000, #ff7300);
+            border: 3px solid #ff4500;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .animated-button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 10px rgba(255, 69, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="flex justify-between items-center p-4 bg-gray-900 shadow-lg border-b border-orange-500">
+        <h1 class="text-3xl font-bold text-orange-400">Soaib Khan</h1>
+        <button id="darkModeToggle" class="p-2 bg-orange-500 rounded shadow-lg">Dark Mode</button>
+    </nav>
+    
+    <section class="flex flex-col items-center justify-center min-h-screen text-center">
+        <h2 id="heroTitle" class="text-5xl font-bold text-orange-400 editable">Welcome to My Portfolio</h2>
+        <p id="heroSubtitle" class="mt-2 text-lg editable">Software Engineer | AI & ML Specialist</p>
+        <button id="aboutButton" class="animated-button mt-4">👤 About Me 👤</button>
+        <button id="skillsButton" class="animated-button mt-4">🔧 View Skills 🔧</button>
+        <button id="projectsButton" class="animated-button mt-4">🚀 View Projects 🚀</button>
+        
+        <div id="aboutContent" class="hidden mt-4 p-4 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold">About Me</h3>
+            <p>I am Soaib Khan, a passionate software engineer specializing in Artificial Intelligence and Machine Learning, with experience in developing AI-driven solutions for real-world applications.</p>
+        </div>
+        
+        <div id="skillsContent" class="hidden mt-4 p-4 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold">Skills</h3>
+            <ul class="list-disc pl-5">
+                <li><strong>Programming Languages:</strong> Python, JavaScript, C++</li>
+                <li><strong>AI & ML:</strong> Machine Learning, Deep Learning, NLP</li>
+                <li><strong>Frameworks:</strong> TensorFlow, PyTorch, Scikit-learn</li>
+                <li><strong>Data Science:</strong> Data Analysis, Big Data, Visualization</li>
+                <li><strong>Development:</strong> Web Development, APIs, Cloud Computing</li>
+            </ul>
+        </div>
+        
+        <div id="projectsContent" class="hidden mt-4 p-4 bg-gray-800 rounded shadow-lg">
+            <h3 class="text-2xl font-bold">Projects</h3>
+            <ul class="list-disc pl-5">
+                <li><strong>AI-Powered Chatbot:</strong> Built a chatbot using NLP and deep learning.</li>
+                <li><strong>ML-Based Fraud Detection:</strong> Developed a fraud detection system for banking transactions.</li>
+                <li><strong>Deep Learning Image Recognition:</strong> Created a model for object recognition in images.</li>
+                <li><strong>Cloud AI Automation:</strong> Deployed AI models on cloud platforms with automation.</li>
+                <li><strong>Predictive Analytics Dashboard:</strong> Built a web-based predictive analytics tool.</li>
+            </ul>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById("darkModeToggle").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+        });
+        
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark-mode");
+        }
+        
+        function playSound() {
+            var audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4382");
+            audio.play();
+        }
+        
+        document.getElementById("aboutButton").addEventListener("click", function() {
+            var content = document.getElementById("aboutContent");
+            content.classList.toggle("hidden");
+            playSound();
+        });
+        
+        document.getElementById("skillsButton").addEventListener("click", function() {
+            var content = document.getElementById("skillsContent");
+            content.classList.toggle("hidden");
+            playSound();
+        });
+        
+        document.getElementById("projectsButton").addEventListener("click", function() {
+            var content = document.getElementById("projectsContent");
+            content.classList.toggle("hidden");
+            playSound();
+        });
+    </script>
+</body>
+</html>
