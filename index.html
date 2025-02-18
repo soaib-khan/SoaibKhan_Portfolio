@@ -3,143 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soaib Khan | Software Engineer & AI Specialist</title>
+    <title>Soaib Khan | AI Engineer & Tech Innovator</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap');
         
+        :root {
+            --neon-orange: #ff4500;
+            --cyber-blue: #00f3ff;
+        }
+
         body {
             font-family: 'Orbitron', sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            background: linear-gradient(45deg, #0a0a0a 30%, #1a1a1a 100%);
+            color: #e0e0e0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .dark-mode {
-            background-color: #0a0a0a !important;
-            color: #d1d1d1 !important;
+            background: linear-gradient(135deg, #000000 0%, #0a0a2e 100%) !important;
+            color: #f0f0f0 !important;
         }
-        .dark-mode nav, .dark-mode section, .dark-mode .box, .dark-mode .animated-button {
-            background: #121212 !important;
-            color: #fff !important;
-            border-color: #ff4500 !important;
+
+        .cyber-border {
+            border: 2px solid var(--neon-orange);
+            box-shadow: 0 0 15px var(--neon-orange);
         }
+
         .section-title {
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 3px solid #ff4500;
-            display: inline-block;
-            padding-bottom: 5px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--neon-orange);
+            position: relative;
+            padding-bottom: 1rem;
         }
-        .box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--neon-orange);
         }
-        .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 0px 10px #ff4500;
-        }
-        .hidden {
-            display: none;
-        }
-        .editable {
-            border: 1px dashed #ff4500;
-            padding: 5px;
-            cursor: text;
-        }
-        .animated-button {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-            background: linear-gradient(45deg, #ff0000, #ff7300);
-            border: 3px solid #ff4500;
+
+        .social-btn {
+            transition: all 0.3s ease;
             border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.5);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 12px 20px;
+            margin: 0 8px;
+            font-size: 1.1rem;
         }
-        .animated-button:active {
-            transform: scale(0.95);
-            box-shadow: 0px 2px 10px rgba(255, 69, 0, 0.3);
+
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 69, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
+        }
+
+        /* Button Click Animation */
+        .button-click {
+            animation: clickEffect 0.3s ease;
+        }
+
+        @keyframes clickEffect {
+            50% { transform: scale(0.95); }
         }
     </style>
 </head>
 <body>
-    <nav class="flex justify-between items-center p-4 bg-gray-900 shadow-lg border-b border-orange-500">
-        <h1 class="text-3xl font-bold text-orange-400">Soaib Khan</h1>
-        <button id="darkModeToggle" class="p-2 bg-orange-500 rounded shadow-lg">Dark Mode</button>
+    <nav class="flex justify-between items-center p-6 bg-gray-900/80 backdrop-blur-md border-b-2 border-orange-500">
+        <h1 class="text-3xl font-bold bg-gradient-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
+            SOAIB KHAN
+        </h1>
+        
+        <div class="flex items-center gap-6">
+            <a href="https://www.linkedin.com/in/soaib-khan-1524292b8" target="_blank" 
+               class="social-btn bg-blue-600 hover:bg-blue-700 text-white">
+               <i class="fab fa-linkedin mr-2"></i>LinkedIn
+            </a>
+            
+            <a href="https://www.instagram.com/the_soaib_ofcl" target="_blank" 
+               class="social-btn bg-pink-600 hover:bg-pink-700 text-white">
+               <i class="fab fa-instagram mr-2"></i>Instagram
+            </a>
+            
+            <a href="https://www.facebook.com/share/18db5NHaHR/" target="_blank" 
+               class="social-btn bg-blue-800 hover:bg-blue-900 text-white">
+               <i class="fab fa-facebook mr-2"></i>Facebook
+            </a>
+
+            <button id="darkModeToggle" class="p-3 bg-orange-500 rounded-lg shadow-xl hover:bg-orange-600 transition-colors">
+                <i class="fas fa-moon text-white"></i>
+            </button>
+        </div>
     </nav>
-    
-    <section class="flex flex-col items-center justify-center min-h-screen text-center">
-        <h2 id="heroTitle" class="text-5xl font-bold text-orange-400 editable">Welcome to My Portfolio</h2>
-        <p id="heroSubtitle" class="mt-2 text-lg editable">Software Engineer | AI & ML Specialist</p>
-        <button id="aboutButton" class="animated-button mt-4">👤 About Me 👤</button>
-        <button id="skillsButton" class="animated-button mt-4">🔧 View Skills 🔧</button>
-        <button id="projectsButton" class="animated-button mt-4">🚀 View Projects 🚀</button>
-        
-        <div id="aboutContent" class="hidden mt-4 p-4 bg-gray-800 rounded shadow-lg">
-            <h3 class="text-2xl font-bold">About Me</h3>
-            <p>I am Soaib Khan, a passionate software engineer specializing in Artificial Intelligence and Machine Learning, with experience in developing AI-driven solutions for real-world applications.</p>
-        </div>
-        
-        <div id="skillsContent" class="hidden mt-4 p-4 bg-gray-800 rounded shadow-lg">
-            <h3 class="text-2xl font-bold">Skills</h3>
-            <ul class="list-disc pl-5">
-                <li><strong>Programming Languages:</strong> Python, JavaScript, C++</li>
-                <li><strong>AI & ML:</strong> Machine Learning, Deep Learning, NLP</li>
-                <li><strong>Frameworks:</strong> TensorFlow, PyTorch, Scikit-learn</li>
-                <li><strong>Data Science:</strong> Data Analysis, Big Data, Visualization</li>
-                <li><strong>Development:</strong> Web Development, APIs, Cloud Computing</li>
-            </ul>
-        </div>
-        
-        <div id="projectsContent" class="hidden mt-4 p-4 bg-gray-800 rounded shadow-lg">
-            <h3 class="text-2xl font-bold">Projects</h3>
-            <ul class="list-disc pl-5">
-                <li><strong>AI-Powered Chatbot:</strong> Built a chatbot using NLP and deep learning.</li>
-                <li><strong>ML-Based Fraud Detection:</strong> Developed a fraud detection system for banking transactions.</li>
-                <li><strong>Deep Learning Image Recognition:</strong> Created a model for object recognition in images.</li>
-                <li><strong>Cloud AI Automation:</strong> Deployed AI models on cloud platforms with automation.</li>
-                <li><strong>Predictive Analytics Dashboard:</strong> Built a web-based predictive analytics tool.</li>
-            </ul>
+
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h2 class="section-title text-4xl font-bold mb-4">Welcome to My Portfolio</h2>
+            <p class="text-lg mb-8">Software Engineer | AI & ML Specialist</p>
+            
+            <div class="flex justify-center gap-4">
+                <button id="aboutButton" class="social-btn bg-orange-500 hover:bg-orange-600">
+                    👤 About Me 👤
+                </button>
+                <button id="skillsButton" class="social-btn bg-cyan-500 hover:bg-cyan-600">
+                    🔧 View Skills 🔧
+                </button>
+                <button id="projectsButton" class="social-btn bg-purple-500 hover:bg-purple-600">
+                    🚀 View Projects 🚀
+                </button>
+            </div>
+
+            <!-- Sections -->
+            <div id="aboutContent" class="hidden mt-8 p-6 bg-gray-800/80 rounded-lg shadow-lg cyber-border">
+                <h3 class="text-2xl font-bold mb-4">About Me</h3>
+                <p class="text-lg">
+                    I am Soaib Khan, a passionate software engineer specializing in AI and Machine Learning.
+                </p>
+            </div>
+
+            <div id="skillsContent" class="hidden mt-8 p-6 bg-gray-800/80 rounded-lg shadow-lg cyber-border">
+                <h3 class="text-2xl font-bold mb-4">Skills</h3>
+                <ul class="list-disc pl-5 text-lg">
+                    <li>Python, TensorFlow, PyTorch</li>
+                    <li>Generative AI, NLP, Computer Vision</li>
+                </ul>
+            </div>
+
+            <div id="projectsContent" class="hidden mt-8 p-6 bg-gray-800/80 rounded-lg shadow-lg cyber-border">
+                <h3 class="text-2xl font-bold mb-4">Projects</h3>
+                <ul class="list-disc pl-5 text-lg">
+                    <li>AI Chatbot with GPT-4 Integration</li>
+                    <li>Medical Image Analysis System</li>
+                </ul>
+            </div>
         </div>
     </section>
-    
+
+    <!-- Sound Effects -->
+    <audio id="hoverSound">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clickSound">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2596/2596-preview.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        document.getElementById("darkModeToggle").addEventListener("click", function() {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+        // Sound Effects
+        const playHoverSound = () => {
+            const sound = document.getElementById('hoverSound');
+            sound.currentTime = 0;
+            sound.play();
+        };
+
+        const playClickSound = () => {
+            const sound = document.getElementById('clickSound');
+            sound.currentTime = 0;
+            sound.play();
+        };
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.classList.add('button-click');
+            setTimeout(() => this.classList.remove('button-click'), 300);
+            playClickSound();
         });
-        
-        if (localStorage.getItem("darkMode") === "true") {
-            document.body.classList.add("dark-mode");
+
+        // Section Toggles
+        const toggleSection = (buttonId, contentId) => {
+            document.getElementById(buttonId).addEventListener('click', function() {
+                const content = document.getElementById(contentId);
+                content.classList.toggle('hidden');
+                this.classList.add('button-click');
+                setTimeout(() => this.classList.remove('button-click'), 300);
+                playClickSound();
+            });
+        };
+
+        toggleSection('aboutButton', 'aboutContent');
+        toggleSection('skillsButton', 'skillsContent');
+        toggleSection('projectsButton', 'projectsContent');
+
+        // Hover Effects
+        document.querySelectorAll('button, a').forEach(element => {
+            element.addEventListener('mouseenter', playHoverSound);
+        });
+
+        // Initialize Dark Mode
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-sun text-white"></i>';
         }
-        
-        function playSound() {
-            var audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4382");
-            audio.play();
-        }
-        
-        document.getElementById("aboutButton").addEventListener("click", function() {
-            var content = document.getElementById("aboutContent");
-            content.classList.toggle("hidden");
-            playSound();
-        });
-        
-        document.getElementById("skillsButton").addEventListener("click", function() {
-            var content = document.getElementById("skillsContent");
-            content.classList.toggle("hidden");
-            playSound();
-        });
-        
-        document.getElementById("projectsButton").addEventListener("click", function() {
-            var content = document.getElementById("projectsContent");
-            content.classList.toggle("hidden");
-            playSound();
-        });
     </script>
 </body>
 </html>
