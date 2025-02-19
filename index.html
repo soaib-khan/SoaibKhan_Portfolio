@@ -3,48 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soaib Khan | Cyber Engineer</title>
+    <title>Soaib Khan | AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap');
         
         :root {
             --neon-orange: #ff4500;
-            --mechanical-gray: #2a2a2a;
+            --cyber-blue: #00f3ff;
         }
 
         body {
-            font-family: 'Share Tech Mono', monospace;
-            background: 
-                radial-gradient(circle at 10% 10%, #1a1a1a 0%, #0a0a0a 100%),
-                repeating-linear-gradient(45deg, #000000 0px, #000000 2px, #1a1a1a 2px, #1a1a1a 4px);
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(45deg, #0a0a0a 30%, #1a1a1a 100%);
             color: #e0e0e0;
-            overflow-x: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .dark-mode {
-            background: 
-                radial-gradient(circle at 90% 90%, #0a0a2e 0%, #000000 100%),
-                repeating-linear-gradient(45deg, #000000 0px, #000000 2px, #1a1a1a 2px, #1a1a1a 4px);
-        }
-
-        .mechanical-button {
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid var(--neon-orange);
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            padding: 12px 24px;
-            margin: 8px;
-            border-radius: 8px;
-            color: #e0e0e0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-        }
-
-        .mechanical-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 0 15px var(--neon-orange);
+            background: linear-gradient(135deg, #000000 0%, #0a0a2e 100%) !important;
+            color: #f0f0f0 !important;
         }
 
         .cyber-border {
@@ -52,9 +31,26 @@
             box-shadow: 0 0 15px var(--neon-orange);
         }
 
-        @keyframes gearRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .mechanical-button {
+            transition: all 0.3s ease;
+            border: 2px solid var(--neon-orange);
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            padding: 12px 24px;
+            margin: 8px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mechanical-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px var(--neon-orange);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 69, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
         }
 
         @media (max-width: 768px) {
@@ -62,17 +58,14 @@
                 flex-direction: column;
                 padding: 1rem;
             }
-            
             .social-panel {
                 flex-wrap: wrap;
                 justify-content: center;
-                margin-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="responsive-nav flex justify-between items-center p-4 bg-black/90 backdrop-blur-xl border-b-2 border-orange-500">
         <div class="flex items-center space-x-4">
             <img src="https://i.ibb.co/s9GT6V0D/soaib.jpg" 
@@ -83,126 +76,143 @@
         </div>
         
         <div class="social-panel flex items-center gap-3">
-            <!-- Social Icons -->
             <div class="flex space-x-2">
                 <a href="https://alvo.chat/2Dm9" target="_blank" class="mechanical-button">
                     <i class="fab fa-whatsapp text-orange-500"></i>
                 </a>
-                
                 <a href="https://www.linkedin.com/in/soaib-khan-1524292b8" target="_blank" class="mechanical-button">
                     <i class="fab fa-linkedin-in text-orange-500"></i>
                 </a>
-                
                 <a href="https://www.instagram.com/the_soaib_ofcl" target="_blank" class="mechanical-button">
                     <i class="fab fa-instagram text-orange-500"></i>
                 </a>
-                
-                <a href="https://www.facebook.com/share/18db5NHaHR/" target="_blank" class="mechanical-button">
-                    <i class="fab fa-facebook-f text-orange-500"></i>
-                </a>
             </div>
-
-            <!-- Dark Mode Toggle -->
             <button id="darkModeToggle" class="mechanical-button">
-                <i class="fas fa-moon text-orange-500"></i>
+                <i class="fas fa-power-off text-orange-500"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <section class="container mx-auto px-4 py-8">
         <div class="text-center">
-            <!-- Profile Section -->
-            <div class="max-w-2xl mx-auto p-8 cyber-border">
-                <img src="https://i.ibb.co/s9GT6V0D/soaib.jpg" 
-                     class="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-orange-500 
-                            shadow-[0_0_50px_#ff4500]">
-                
-                <h2 class="text-4xl font-bold mb-4 text-orange-500">
-                    <span class="text-cyan-400">AI</span> ENGINEER
-                </h2>
-                
-                <!-- Action Buttons -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                    <button id="aboutButton" class="mechanical-button">
-                        <i class="fas fa-user-cog mr-2"></i>ABOUT ME
-                    </button>
-                    
-                    <button id="skillsButton" class="mechanical-button">
-                        <i class="fas fa-tools mr-2"></i>SKILLS
-                    </button>
-                    
-                    <button id="projectsButton" class="mechanical-button">
-                        <i class="fas fa-rocket mr-2"></i>PROJECTS
-                    </button>
-                </div>
+            <img src="https://i.ibb.co/s9GT6V0D/soaib.jpg" 
+                 class="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-orange-500 shadow-[0_0_25px_#ff4500] cyber-border">
+            
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
+                AI & ML Engineer
+            </h2>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <button id="aboutButton" class="mechanical-button">
+                    <i class="fas fa-user-astronaut mr-2"></i>About Me
+                </button>
+                <button id="skillsButton" class="mechanical-button">
+                    <i class="fas fa-tools mr-2"></i>Skills
+                </button>
+                <button id="projectsButton" class="mechanical-button">
+                    <i class="fas fa-rocket mr-2"></i>Projects
+                </button>
+            </div>
 
-                <!-- Content Sections -->
-                <div id="aboutContent" class="hidden mt-8 p-6 cyber-border">
-                    <h3 class="text-2xl font-bold mb-4">About Me</h3>
-                    <p class="text-lg">
-                        AI Engineer specializing in machine learning systems and neural network architectures.
-                    </p>
+            <!-- About Me Section -->
+            <div id="aboutContent" class="hidden mt-8 p-6 cyber-border">
+                <h3 class="text-2xl font-bold mb-4">Education & Certifications</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="p-4 border border-orange-500 rounded-lg">
+                        <h4 class="text-orange-500 font-bold">🎓 Education</h4>
+                        <p class="mt-2">
+                            B.Tech CSE (2023-2027)<br>
+                            KCC Institute of Technology & Management<br>
+                            XII: 60.10% | X: 80.30%
+                        </p>
+                    </div>
+                    <div class="p-4 border border-cyan-500 rounded-lg">
+                        <h4 class="text-cyan-500 font-bold">📜 Certifications</h4>
+                        <p class="mt-2">
+                            Python Programming (LetsUpgrade)<br>
+                            Digital Marketing<br>
+                            ReactJS Certification
+                        </p>
+                    </div>
                 </div>
+            </div>
 
-                <div id="skillsContent" class="hidden mt-8 p-6 cyber-border">
-                    <h3 class="text-2xl font-bold mb-4">Technical Arsenal</h3>
-                    <ul class="list-disc pl-5 text-lg">
-                        <li>Python • TensorFlow • PyTorch</li>
-                        <li>Computer Vision • NLP • Deep Learning</li>
-                        <li>Cloud Architecture • Big Data</li>
-                    </ul>
+            <!-- Skills Section -->
+            <div id="skillsContent" class="hidden mt-8 p-6 cyber-border">
+                <h3 class="text-2xl font-bold mb-4">Technical Skills</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="skill-card p-4 border border-orange-500 rounded-lg">
+                        <i class="fab fa-python text-3xl text-orange-500"></i>
+                        <h4 class="mt-2 font-bold">Python</h4>
+                        <p class="text-sm">Data Structures & Algorithms</p>
+                    </div>
+                    <div class="skill-card p-4 border border-cyan-500 rounded-lg">
+                        <i class="fab fa-js text-3xl text-yellow-400"></i>
+                        <h4 class="mt-2 font-bold">JavaScript</h4>
+                        <p class="text-sm">ReactJS | Node.js</p>
+                    </div>
+                    <div class="skill-card p-4 border border-orange-500 rounded-lg">
+                        <i class="fas fa-database text-3xl text-cyan-400"></i>
+                        <h4 class="mt-2 font-bold">MySQL</h4>
+                        <p class="text-sm">Database Management</p>
+                    </div>
+                    <div class="skill-card p-4 border border-cyan-500 rounded-lg">
+                        <i class="fab fa-html5 text-3xl text-red-500"></i>
+                        <h4 class="mt-2 font-bold">Web Development</h4>
+                        <p class="text-sm">HTML5 | CSS3</p>
+                    </div>
                 </div>
+            </div>
 
-                <div id="projectsContent" class="hidden mt-8 p-6 cyber-border">
-                    <h3 class="text-2xl font-bold mb-4">Innovations</h3>
-                    <ul class="list-disc pl-5 text-lg">
-                        <li>Autonomous Drone Navigation System</li>
-                        <li>Real-time Speech Recognition Engine</li>
-                        <li>Predictive Healthcare Analytics Platform</li>
-                    </ul>
+            <!-- Projects Section -->
+            <div id="projectsContent" class="hidden mt-8 p-6 cyber-border">
+                <h3 class="text-2xl font-bold mb-4">Academic Projects</h3>
+                <div class="space-y-6">
+                    <div class="project-card p-4 border border-orange-500 rounded-lg">
+                        <h4 class="text-xl text-cyan-400">🤖 AI Chatbot System</h4>
+                        <p class="mt-2">Python-based chatbot with NLP capabilities</p>
+                        <div class="mt-2 flex gap-2">
+                            <span class="px-2 py-1 bg-orange-500/20 text-orange-500 rounded">Python</span>
+                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-500 rounded">NLP</span>
+                        </div>
+                    </div>
+                    <div class="project-card p-4 border border-cyan-500 rounded-lg">
+                        <h4 class="text-xl text-orange-400">📊 Student Management System</h4>
+                        <p class="mt-2">Full-stack application with ReactJS and MySQL</p>
+                        <div class="mt-2 flex gap-2">
+                            <span class="px-2 py-1 bg-orange-500/20 text-orange-500 rounded">ReactJS</span>
+                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-500 rounded">MySQL</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mechanical Sound Effects -->
+    <!-- Sound Effects -->
     <audio id="hoverSound">
-        <source src="https://assets.mixkit.co/active_storage/sfx/2593/2593-preview.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
     </audio>
     <audio id="clickSound">
-        <source src="https://assets.mixkit.co/active_storage/sfx/2594/2594-preview.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2596/2596-preview.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         // Sound Effects
         const playHoverSound = () => {
-            const sound = document.getElementById('hoverSound');
-            sound.currentTime = 0;
-            sound.play();
+            new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3').play();
         };
 
         const playClickSound = () => {
-            const sound = document.getElementById('clickSound');
-            sound.currentTime = 0;
-            sound.play();
+            new Audio('https://assets.mixkit.co/active_storage/sfx/2596/2596-preview.mp3').play();
         };
 
         // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', function() {
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
-            playClickSound();
-            
-            // Update icon
-            if(document.body.classList.contains('dark-mode')) {
-                this.innerHTML = '<i class="fas fa-sun text-orange-500"></i>';
-            } else {
-                this.innerHTML = '<i class="fas fa-moon text-orange-500"></i>';
-            }
-            
-            // Save preference
+            this.classList.toggle('active');
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            playClickSound();
         });
 
         // Section Toggles
@@ -219,14 +229,13 @@
         toggleSection('projectsButton', 'projectsContent');
 
         // Hover Effects
-        document.querySelectorAll('.mechanical-button').forEach(button => {
-            button.addEventListener('mouseenter', playHoverSound);
+        document.querySelectorAll('button, a').forEach(element => {
+            element.addEventListener('mouseenter', playHoverSound);
         });
 
         // Initialize Dark Mode
         if (localStorage.getItem('darkMode') === 'true') {
             document.body.classList.add('dark-mode');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun text-orange-500"></i>';
         }
     </script>
 </body>
